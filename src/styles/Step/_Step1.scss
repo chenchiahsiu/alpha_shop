@@ -1,0 +1,65 @@
+%input-style {
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0.8rem;
+  color: gray;
+}
+.step1 {
+  margin: 4rem 0 2rem;
+  .information {
+    width: 36vw;
+    height: 45vh;
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 4rem;
+    .row {
+      margin-top: 1.6rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .information-item {
+        display: flex;
+        flex-direction: column;
+        &.text-left {
+          margin-right: 2rem;
+        }
+        &.text-right {
+          width: 100%;
+        }
+        label {
+          color: rgb(75, 72, 72);
+          font-weight: bold;
+          margin: 0.5rem 0rem;
+        }
+        .select-wrapper {
+          position: relative;
+          z-index: 0;
+          &::after {
+            content: "";
+            border-style: solid;
+            border-width: 6px 5px 0 5px;
+            border-color: black transparent transparent transparent;
+            position: absolute;
+            top: 50%;
+            right: 0.5rem;
+            transform: translateY(-50%);
+            z-index: -1;
+          }
+          select {
+            @extend %input-style;
+            -webkit-appearance: none;
+            width: 10rem;
+            background-color: transparent;
+            padding-bottom: 0.85rem;
+          }
+        }
+        input {
+          @extend %input-style;
+          &[type="email"] {
+            padding-bottom: 0.95rem;
+          }
+        }
+      }
+    }
+  }
+}

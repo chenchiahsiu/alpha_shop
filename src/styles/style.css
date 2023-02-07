@@ -1,0 +1,386 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 10rem;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+header .logo-name {
+  position: absolute;
+  left: 50%;
+}
+header .logo-name .logo {
+  fill: #000;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+header nav .left-side {
+  width: 40%;
+}
+header nav .left-side ul {
+  display: flex;
+  justify-content: space-between;
+}
+header nav .left-side ul li {
+  list-style-type: none;
+}
+header nav .left-side ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: bold;
+}
+header nav .right-side {
+  width: 15%;
+}
+header nav .right-side ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+header nav .right-side li {
+  list-style-type: none;
+}
+header nav .right-side li a {
+  text-decoration: none;
+}
+header nav .right-side li a .nav-icon {
+  width: 30px;
+  height: 30px;
+  fill: #000;
+}
+header nav .right-side li a .nav-icon-moon {
+  width: 30px;
+  height: 30px;
+  stroke: #000;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step-container {
+  display: flex;
+  width: 36vw;
+  justify-content: space-between;
+}
+.step-container .step {
+  margin-top: 3rem;
+  position: relative;
+  display: flex;
+}
+.step-container .step:nth-child(1) .circle-container::after {
+  content: "1";
+}
+.step-container .step:nth-child(2) .circle-container::after {
+  content: "2";
+}
+.step-container .step:nth-child(3) .circle-container::after {
+  content: "3";
+}
+.step-container .step .circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  color: #e5e5e5;
+  margin-right: 5px;
+}
+.step-container .step .circle-container.checked::after {
+  content: "✔";
+}
+.step-container .step .label-container {
+  color: #e5e5e5;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.step-container .step.active .circle-container {
+  border: none;
+  background-color: black;
+  color: white;
+}
+.step-container .step.active .label-container {
+  color: black;
+}
+.step-container .step .connect-line {
+  display: block;
+  height: 2px;
+  width: 80px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 35px);
+}
+.step-container .step .connect-line.active {
+  background-color: black;
+}
+
+.step3 .cardInformation .cardInformation-row3 div.text input, .step3 .cardInformation .row input, .step1 .information .row .information-item input, .step1 .information .row .information-item .select-wrapper select {
+  border: 1px solid gray;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 0.8rem;
+  color: gray;
+}
+
+.step1 {
+  margin: 4rem 0 2rem;
+}
+.step1 .information {
+  width: 36vw;
+  height: 45vh;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 4rem;
+}
+.step1 .information .row {
+  margin-top: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.step1 .information .row .information-item {
+  display: flex;
+  flex-direction: column;
+}
+.step1 .information .row .information-item.text-left {
+  margin-right: 2rem;
+}
+.step1 .information .row .information-item.text-right {
+  width: 100%;
+}
+.step1 .information .row .information-item label {
+  color: rgb(75, 72, 72);
+  font-weight: bold;
+  margin: 0.5rem 0rem;
+}
+.step1 .information .row .information-item .select-wrapper {
+  position: relative;
+  z-index: 0;
+}
+.step1 .information .row .information-item .select-wrapper::after {
+  content: "";
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: black transparent transparent transparent;
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.step1 .information .row .information-item .select-wrapper select {
+  -webkit-appearance: none;
+  width: 10rem;
+  background-color: transparent;
+  padding-bottom: 0.85rem;
+}
+.step1 .information .row .information-item input[type=email] {
+  padding-bottom: 0.95rem;
+}
+
+.step2 {
+  margin: 4rem 0 2rem;
+}
+.step2 .deliver-container {
+  width: 36vw;
+  height: 45vh;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 4rem;
+}
+.step2 .deliver-container .deliver-item {
+  width: 85%;
+  height: 4.8rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.step2 .deliver-container .deliver-item.active {
+  font-weight: bold;
+  border: 1px solid black;
+}
+.step2 .deliver-container .deliver-item .select {
+  display: flex;
+  align-items: center;
+}
+.step2 .deliver-container .deliver-item input[type=radio] {
+  -webkit-appearance: none;
+  border: 1px solid gray;
+  font-size: 1rem;
+  padding: 0.6rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.step2 .deliver-container .deliver-item input[type=radio]:checked {
+  box-shadow: inset 0 0 0 5px;
+  color: black;
+}
+.step2 .deliver-container .deliver-item label span {
+  display: block;
+}
+
+.step3 .cardInformation .cardInformation-row3 div.text label, .step3 .cardInformation .row label {
+  color: rgb(75, 72, 72);
+  font-weight: bold;
+  margin: 0.5rem 0rem;
+}
+
+.step3 {
+  margin: 4rem 0 2rem;
+}
+.step3 .cardInformation {
+  width: 36vw;
+  height: 45vh;
+  border-bottom: 2px solid #e5e5e5;
+}
+.step3 .cardInformation .row {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.step3 .cardInformation .row input {
+  width: 65%;
+}
+.step3 .cardInformation .cardInformation-row3 {
+  margin-top: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+.step3 .cardInformation .cardInformation-row3 div.text {
+  display: flex;
+  flex-direction: column;
+}
+.step3 .cardInformation .cardInformation-row3 div.text input {
+  width: 18rem;
+}
+.step3 .cardInformation .cardInformation-row3 div.text input.cvc {
+  padding-bottom: 0.9rem;
+}
+
+.ProgressControl {
+  width: 36vw;
+  display: flex;
+  justify-content: space-between;
+}
+.ProgressControl button {
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+}
+.ProgressControl button.prevStep {
+  display: flex;
+  align-items: center;
+}
+.ProgressControl button.prevStep .leftArrow {
+  margin-right: 1rem;
+  fill: #000;
+}
+.ProgressControl button.nextStep {
+  width: 14rem;
+  height: 3.2rem;
+  background-color: rgb(240, 102, 146);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ProgressControl button.nextStep .rightArrow {
+  margin-left: 1rem;
+}
+.ProgressControl button.none {
+  visibility: hidden;
+}
+
+.shoppingCart {
+  border: 2px solid #f3f0f0;
+  border-radius: 2%;
+  width: 35vw;
+  height: 75vh;
+  margin: 6rem auto;
+}
+.shoppingCart h2 {
+  padding: 2rem 2rem 1rem;
+  font-weight: bold;
+}
+.shoppingCart .top-section li {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  font-size: 1.2rem;
+}
+.shoppingCart .top-section li img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2%;
+  margin: 1rem 2rem;
+}
+.shoppingCart .top-section li .product-container {
+  margin-top: 1.2rem;
+  height: 50%;
+}
+.shoppingCart .top-section li .product-container .choose-count {
+  width: 8rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem 0;
+}
+.shoppingCart .top-section li .product-container .choose-count .minus-icon {
+  fill: rgb(240, 235, 235);
+  cursor: pointer;
+}
+.shoppingCart .top-section li .product-container .choose-count .minus-icon rect {
+  fill: #000;
+}
+.shoppingCart .top-section li .product-container .choose-count .plus-icon {
+  fill: rgb(240, 235, 235);
+  cursor: pointer;
+}
+.shoppingCart .top-section li .product-price {
+  position: absolute;
+  right: 2rem;
+  top: 1.2rem;
+  font-weight: bold;
+}
+.shoppingCart .bottom-section {
+  font-size: 1.2rem;
+  height: 25vh;
+  padding-top: 1.4rem;
+}
+.shoppingCart .bottom-section .row {
+  border-top: 2px solid #f3f0f0;
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+  padding-top: 1.3rem;
+}
+.shoppingCart .bottom-section .row .price {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */

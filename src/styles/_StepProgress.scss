@@ -1,0 +1,62 @@
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .circle-container::after {
+      content: "#{$i}";
+    }
+  }
+}
+
+.step-container {
+  display: flex;
+  width: 36vw;
+  justify-content: space-between;
+  .step {
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    @include getStepNums(3);
+    .circle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      width: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 50%;
+      color: #e5e5e5;
+      margin-right: 5px;
+      &.checked {
+        &::after {
+          content: "\2714";
+        }
+      }
+    }
+    .label-container {
+      color: #e5e5e5;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &.active {
+      .circle-container {
+        border: none;
+        background-color: black;
+        color: white;
+      }
+      .label-container {
+        color: black;
+      }
+    }
+    .connect-line {
+      display: block;
+      height: 2px;
+      width: 80px;
+      background-color: #e5e5e5;
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 35px);
+      &.active {
+        background-color: black;
+      }
+    }
+  }
+}

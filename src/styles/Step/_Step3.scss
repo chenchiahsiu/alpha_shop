@@ -1,0 +1,45 @@
+%label-style {
+  color: rgb(75, 72, 72);
+  font-weight: bold;
+  margin: 0.5rem 0rem;
+}
+
+.step3 {
+  margin: 4rem 0 2rem;
+  .cardInformation {
+    width: 36vw;
+    height: 45vh;
+    border-bottom: 2px solid #e5e5e5;
+    .row {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      label {
+        @extend %label-style;
+      }
+      input {
+        @extend %input-style;
+        width: 65%;
+      }
+    }
+    .cardInformation-row3 {
+      margin-top: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      div.text {
+        display: flex;
+        flex-direction: column;
+        label {
+          @extend %label-style;
+        }
+        input {
+          @extend %input-style;
+          width: 18rem;
+          &.cvc {
+            padding-bottom: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}

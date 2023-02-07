@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 10rem;
+  font-family: "Roboto", sans-serif;
+}
+
+@import "./Header";
+@import "./Main";
+@import "./StepProgress";
+@import "./Step/Step1";
+@import "./Step/Step2";
+@import "./Step/Step3";
+@import "./ProgressControl";
+@import "./Cart";
