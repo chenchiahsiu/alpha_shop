@@ -56,6 +56,11 @@ export default function Cart() {
           ...p,
           quantity: action === "minus" ? p.quantity - 1 : p.quantity + 1,
         };
+      } else if (p.id === productId && p.quantity === 0) {
+        return {
+          ...p,
+          quantity: action === "minus" ? p.quantity : p.quantity + 1,
+        };
       } else {
         return p;
       }

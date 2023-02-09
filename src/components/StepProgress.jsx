@@ -8,7 +8,7 @@ const StepProgress = ({ stepData, setStepData }) => {
         <div className="step active">
           <div
             className={
-              stepData === "step2" || stepData === "step3"
+              !(stepData === "step1")
                 ? "circle-container checked"
                 : "circle-container"
             }
@@ -16,13 +16,7 @@ const StepProgress = ({ stepData, setStepData }) => {
           <div className="label-container">寄送地址</div>
           <span className="connect-line active"></span>
         </div>
-        <div
-          className={
-            stepData === "step2" || stepData === "step3"
-              ? "step active"
-              : "step"
-          }
-        >
+        <div className={!(stepData === "step1") ? "step active" : "step"}>
           <div
             className={
               stepData === "step3"
@@ -33,9 +27,7 @@ const StepProgress = ({ stepData, setStepData }) => {
           <div className="label-container">運送方式</div>
           <span
             className={
-              stepData === "step2" || stepData === "step3"
-                ? "connect-line active"
-                : "connect-line"
+              !(stepData === "step1") ? "connect-line active" : "connect-line"
             }
           ></span>
         </div>
