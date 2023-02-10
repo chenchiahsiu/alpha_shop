@@ -50,16 +50,11 @@ export default function Cart() {
   // 以下是方法二: 將上面 2 個 function 統整寫在一個 function
   function handleShoppingItem(productId, action) {
     let changeTotalPrice = 0;
-    const changeProductCount = products.map((p) => {
+    let changeProductCount = products.map((p) => {
       if (p.id === productId && p.quantity > 0) {
         return {
           ...p,
           quantity: action === "minus" ? p.quantity - 1 : p.quantity + 1,
-        };
-      } else if (p.id === productId && p.quantity === 0) {
-        return {
-          ...p,
-          quantity: action === "minus" ? p.quantity : p.quantity + 1,
         };
       } else {
         return p;
@@ -68,6 +63,7 @@ export default function Cart() {
     changeProductCount.forEach((p) => {
       changeTotalPrice += p.price * p.quantity;
     });
+    changeProductCount = changeProductCount.filter((p) => p.quantity > 0);
     setTotalPrice(changeTotalPrice);
     setProducts(changeProductCount);
   }
