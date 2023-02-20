@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { CartContext, initialProducts } from "../contexts/CartContext";
+import { PaymentContext, initialPaymentData } from "../contexts/PaymentContext";
 
 import StepProgress from "./StepProgress";
 import Step1 from "./Step/Step1";
@@ -10,19 +12,25 @@ import Cart from "./Cart";
 
 const Main = () => {
   const [stepData, setStepData] = useState("step1");
+  const [products, setProducts] = useState(initialProducts);
+  const [paymentData, setPaymentData] = useState(initialPaymentData);
 
   return (
     <div className="main">
-      <div className="left-section">
-        <StepProgress stepData={stepData} setStepData={setStepData} />
-        {stepData === "step1" && <Step1 />}
-        {stepData === "step2" && <Step2 />}
-        {stepData === "step3" && <Step3 />}
-        <ProgressControl stepData={stepData} setStepData={setStepData} />
-      </div>
-      <div className="right-section">
-        <Cart />
-      </div>
+      <CartContext.Provider value={[products, setProducts]}>
+        <div className="left-section">
+          <StepProgress stepData={stepData} setStepData={setStepData} />
+          {stepData === "step1" && <Step1 />}
+          {stepData === "step2" && <Step2 />}
+          <PaymentContext.Provider value={[paymentData, setPaymentData]}>
+            {stepData === "step3" && <Step3 />}
+            <ProgressControl stepData={stepData} setStepData={setStepData} />
+          </PaymentContext.Provider>
+        </div>
+        <div className="right-section">
+          <Cart />
+        </div>
+      </CartContext.Provider>
     </div>
   );
 };
