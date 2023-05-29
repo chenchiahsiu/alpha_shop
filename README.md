@@ -8,6 +8,12 @@ This project is made using React.js for learning purpose
 - Node.js
 - React.js
 
+## Pictures
+
+![image](/public/main.png)
+
+![image](/public/footer.png)
+
 ## Installation and execution
 
 1. Open terminal to clone this project.
